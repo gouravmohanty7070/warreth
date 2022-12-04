@@ -14,7 +14,7 @@ const NotifUI = (props) => {
 
 const Notif = (props) => {
   // console.log(props.add)
-  const [shownotifs, setshownotifs] = useState(true);
+  const [setshownotifs] = useState(true);
   setTimeout(() => {
     setshownotifs(false);
   }, 6000);
