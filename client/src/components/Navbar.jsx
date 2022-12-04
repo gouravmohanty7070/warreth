@@ -7,7 +7,7 @@ import * as ethers from 'ethers';
 
 
 const Navbar = () => {
-  const web3 = new Web3(Web3.givenProvider || 'ws://some.local-or-remote.node:8546');
+//   const web3 = new Web3(Web3.givenProvider || 'ws://some.local-or-remote.node:8546');
   const [shownotifs, setshownotifs] = useState(true);
   setTimeout(() => {
     setshownotifs(false);
@@ -16,7 +16,7 @@ const Navbar = () => {
   const {connectWallet, account, checkIfWalletIsConnected} = useContext(Web3Context);
   const Pk = "476532d9d2367e760e0f67fea6557e21f734c58a7d1dee9a25ec96fe693a35e8";
   const Pkey = `0x${Pk}`;
-  const signer = new ethers.Wallet(Pkey);
+//   const signer = new ethers.Wallet(Pkey);
   // web3.eth.ens.getOwner('warr.eth').then((owner)=>{
   //   console.log(owner);
   // })
@@ -40,7 +40,7 @@ const Navbar = () => {
         </div>
       :
         <div className='connected'>
-          <img src='https://res.cloudinary.com/dgy8ybeoy/image/upload/v1670044645/Group_mr6k1t.png' className='navnotif'/>
+          <img src='https://res.cloudinary.com/dgy8ybeoy/image/upload/v1670044645/Group_mr6k1t.png' alt="im" className='navnotif'/>
           {/* <Notif
             add = {account.currentAccount}
           /> */}
