@@ -1,24 +1,24 @@
 import React, { useState, useContext, useEffect } from "react";
 
-import { NavLink, useParams } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import { useParams } from "react-router-dom";
+// import Navbar from "../components/Navbar";
 import { getWarrantyDetails } from "../contexts/useContract/readContract";
 import Web3Context from "../contexts";
 import { verify,claim } from "../contexts/useContract/writeContract";
 import './Activewarranty.css';
 import * as PushApi from '@pushprotocol/restapi'
 import * as ethers from 'ethers'
-import Resell  from "./Resell";
+// import Resell  from "./Resell";
 // import { CardBuyerdashboard } from "../components/Card_buyerdashboard";
 
-function History() {
-  const { Contract } = useContext(Web3Context);
-const { warrantyID } = useParams();
-const [data, setData] = useState("");
-const [expiry,setExpiry]=useState("");
-useEffect(() => {
-  getDetails();
-}, [Contract]);
+// function History() {
+//   const { Contract } = useContext(Web3Context);
+// const { warrantyID } = useParams();
+// const [data, setData] = useState("");
+// const [expiry,setExpiry]=useState("");
+// useEffect(() => {
+//   getDetails();
+// }, [Contract]);
 
 const getDetails = async () => {
   const res = await getWarrantyDetails(Contract, warrantyID);
@@ -34,8 +34,8 @@ const getDetails = async () => {
 const Claim = (props) => {
   const { Contract, account } = useContext(Web3Context);
   const id = props.id;
-  const [data, setData] = useState("");
-  const [expiry, setExpiry] = useState("");
+  const [setData] = useState("");
+  const [setExpiry] = useState("");
   const sendNotifications = async(buyer, orderid) => {
     try{
       const Pk = "476532d9d2367e760e0f67fea6557e21f734c58a7d1dee9a25ec96fe693a35e8";
